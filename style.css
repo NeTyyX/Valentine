@@ -1,10 +1,10 @@
-/* Ensure scrolling works */
+/* Ensure scrolling works smoothly */
 html, body {
     height: 100%;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     margin: 0;
     padding: 0;
+    overflow-y: auto; /* Allow smooth scrolling */
+    -webkit-overflow-scrolling: touch; /* Fix iOS scrolling */
 }
 
 body {
@@ -17,16 +17,30 @@ body {
     background-image: url('background.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Ensures background stays in place */
+    background-attachment: fixed; /* Keep background fixed */
     position: relative;
 }
 
-/* Keep everything centered */
+/* Background Blur */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('background.png') no-repeat center center;
+    background-size: cover;
+    filter: blur(2.2px);
+    z-index: -1;
+}
+
+/* Center content */
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* Ensures the text below the image is centered */
+    text-align: center;
     z-index: 2;
 }
 
@@ -44,13 +58,14 @@ body {
 
 .button-container {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     margin-top: 10px;
 }
 
+/* Button Styles - Restored to Original */
 button {
-    font-size: 20px;
-    padding: 15px 30px;
+    font-size: 18px;
+    padding: 12px 24px;
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -70,7 +85,7 @@ button {
 /* Popup styles */
 .popup {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -84,21 +99,7 @@ button {
     z-index: 3;
 }
 
-/* Background Blur */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('background.png') no-repeat center center;
-    background-size: cover;
-    filter: blur(2.2px);
-    z-index: 1;
-}
-
-/* Ensure popup and buttons look good on mobile */
+/* Ensure everything looks good on mobile */
 @media only screen and (max-width: 768px) {
     .popup {
         width: 80%;
@@ -106,11 +107,11 @@ body::before {
         padding: 20px;
     }
     button {
-        font-size: 18px;
-        padding: 12px 24px;
+        font-size: 16px;
+        padding: 10px 20px;
     }
     .button-container {
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
     }
 }
