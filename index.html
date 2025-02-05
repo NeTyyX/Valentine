@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yes or No</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1"></script>
 </head>
 <body>
-    <div class="content">
+    <div class="background-blur"></div>
+    <div class="wrapper">
         <img src="img.jpg" alt="Center Image" class="image">
         <div class="text">Brezeanu Maria Alexandra, will you be my valentine?</div> <!-- Add your desired text here -->
         <div class="button-container">
             <button class="yes" onclick="answer('Yes')">Yes</button>
             <button class="no" onclick="answer('No')">No</button>
         </div>
+        <div class="popup" id="popup">Yayyy! Te iubesc</div>
     </div>
-    <div class="popup" id="popup">Yayyy! Te iubesc</div>
-
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1"></script>
 </body>
 </html>
