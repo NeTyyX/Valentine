@@ -10,11 +10,13 @@
 <body>
     <div class="background-blur"></div>
     <div class="wrapper">
-        <img src="img.jpg" alt="Center Image" class="image">
-        <div class="text">Brezeanu Maria Alexandra, will you be my valentine?</div> <!-- Add your desired text here -->
-        <div class="button-container">
-            <button class="yes" onclick="answer('Yes')">Yes</button>
-            <button class="no" onclick="answer('No')">No</button>
+        <div class="content"> <!-- Added content wrapper for centering -->
+            <img src="img.jpg" alt="Center Image" class="image">
+            <div class="text">Brezeanu Maria Alexandra, will you be my valentine?</div> <!-- Add your desired text here -->
+            <div class="button-container">
+                <button class="yes" onclick="answer('Yes')">Yes</button>
+                <button class="no" onclick="answer('No')">No</button>
+            </div>
         </div>
         <div class="popup" id="popup">Yayyy! Te iubesc</div>
     </div>
