@@ -12,8 +12,7 @@ function answer(choice) {
         scaleFactor = 1; // Reset to the original size
         yesButton.style.transform = `scale(${scaleFactor})`;
         popup.style.display = 'block';
-        setTimeout(() => { popup.style.display = 'none'; }, 2000);
-        
+
         // Confetti effect on the entire screen
         confetti({
             particleCount: 200,
